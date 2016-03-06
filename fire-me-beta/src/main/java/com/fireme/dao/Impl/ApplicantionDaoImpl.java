@@ -6,10 +6,12 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
 import com.fireme.dao.JobSeekerDao;
 import com.fireme.model.JobSeeker;
 
+@Component
 public class ApplicantionDaoImpl implements JobSeekerDao{
 private JdbcTemplate jdbcTemplate;
 	

@@ -35,6 +35,6 @@
 	<util:properties id="customerProperties" location="classpath:CustomerConfiguration.properties"/>
 	<util:properties id="transactionProperties" location="classpath:TransactionConfiguration.properties"/>
 
-	<context:component-scan base-package="com.ambank.gst.web.controller" />
+	<context:component-scan base-package="com.fireme.*" />
 
 </beans:beans>

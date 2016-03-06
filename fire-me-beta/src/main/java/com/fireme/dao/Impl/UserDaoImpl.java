@@ -1,17 +1,20 @@
 package com.fireme.dao.Impl;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
 import com.fireme.dao.UserDao;
 import com.fireme.mapper.UserMapper;
 import com.fireme.model.User;
 
+@Component("usersDao")
 public class UserDaoImpl implements UserDao{
 private JdbcTemplate jdbcTemplate;
 	
@@ -52,6 +55,7 @@ private JdbcTemplate jdbcTemplate;
 		String sql = "Select * from User";
 		jdbcTemplate = new JdbcTemplate(getDataSource());
 		List<User> userList = jdbcTemplate.query(sql,new UserMapper());
+//		List<User> userList =  new ArrayList<User>();
 		return userList;
 	}
 

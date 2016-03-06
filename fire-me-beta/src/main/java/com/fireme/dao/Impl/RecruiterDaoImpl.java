@@ -7,6 +7,7 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
 
 import com.fireme.dao.RecruiterDao;
 import com.fireme.mapper.JobSeekerMapper;
@@ -14,6 +15,7 @@ import com.fireme.mapper.RecruiterMapper;
 import com.fireme.model.JobSeeker;
 import com.fireme.model.Recruiter;
 
+@Component
 public class RecruiterDaoImpl implements RecruiterDao{
 private JdbcTemplate jdbcTemplate;
 	
