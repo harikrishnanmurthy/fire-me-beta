@@ -8,8 +8,10 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Component;
 
 import com.fireme.dao.JobSeekerDao;
+import com.fireme.dao.RecruiterDao;
 import com.fireme.dao.UserDao;
 import com.fireme.model.JobSeeker;
+import com.fireme.model.Recruiter;
 import com.fireme.model.User;
 import com.fireme.service.UserService;
 
@@ -21,6 +23,9 @@ public class UserServiceImpl implements UserService {
 
 	@Inject
 	JobSeekerDao jobSeekerDao;
+	
+	@Inject
+	RecruiterDao recruiterDao;
 
 	@Override
 	public boolean isValidUser(String username, String password) throws SQLException {
@@ -32,6 +37,12 @@ public class UserServiceImpl implements UserService {
 	public void registerJobSeeker(User user, JobSeeker jobSeeker) {
 		usersDao.createUser(user);
 		jobSeekerDao.createJobSeeker(jobSeeker);
+	}
+	
+	@Override
+	public void registerRecruiter(User user, Recruiter recruiter) {
+		usersDao.createUser(user);
+		recruiterDao.createRecruiter(recruiter);
 	}
 
 	public int createUserIdSequence() {

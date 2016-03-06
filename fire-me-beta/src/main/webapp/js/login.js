@@ -12,5 +12,9 @@ $("document").ready(function(){
 	$("#registerJobSeeker").click(function(){
 		$('#registerJobSeekerForm').submit();
 	});
+	
+	$("#registerRecruiter").click(function(){
+		$('#registerRecruiterForm').submit();
+	});
 });
 
