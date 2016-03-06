@@ -35,9 +35,7 @@ public class JobSeekerController {
 		user.setEmail(jobSeeker.getEmail());
 		user.setPhoneNo(jobSeeker.getPhoneNo());
 		user.setType("J");
-		user.setUserId("1");
 		
-		jobSeeker.setJobseekerId("1");
 		
 		userService.registerJobSeeker(user, jobSeeker);
 		

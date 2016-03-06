@@ -38,9 +38,9 @@ private JdbcTemplate jdbcTemplate;
 	}
 	@Override
 	public String createUser(User user) {
-		String sql = "INSERT INTO USER(USER_ID,USER_NAME,PASSWORD,FIRST_NAME,LAST_NAME,TYPE,EMAIL_ID,PHONE)VALUES(?,?,?,?,?,?,?,?);";
+		String sql = "INSERT INTO USER(USER_NAME,PASSWORD,FIRST_NAME,LAST_NAME,TYPE,EMAIL_ID,PHONE)VALUES(?,?,?,?,?,?,?);";
 		jdbcTemplate = new JdbcTemplate(getDataSource());
-		jdbcTemplate.update(sql, new Object[] {user.getUserId(),user.getUserName(),user.getPassword(),user.getFirstName(),user.getLastName(),user.getType(),user.getEmail(),user.getPhoneNo()});
+		jdbcTemplate.update(sql, new Object[] {user.getUserName(),user.getPassword(),user.getFirstName(),user.getLastName(),user.getType(),user.getEmail(),user.getPhoneNo()});
 	 	try {
 			dataSource.getConnection().setAutoCommit(true);
 		} catch (SQLException e) {

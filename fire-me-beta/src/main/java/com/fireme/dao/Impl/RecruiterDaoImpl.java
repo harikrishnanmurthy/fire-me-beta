@@ -40,9 +40,9 @@ private JdbcTemplate jdbcTemplate;
 
 	@Override
 	public String createRecruiter(Recruiter recruiter) {
-		String sql = "INSERT INTO RECRUITER(RECRUITER_ID,USER_ID,ORG_NAME)VALUES(?,?,?)";
+		String sql = "INSERT INTO RECRUITER(USER_NAME,ORG_NAME)VALUES(?,?)";
 		jdbcTemplate = new JdbcTemplate(getDataSource());
-		jdbcTemplate.update(sql, new Object[] {recruiter.getRecruiterId(),recruiter.getUserId(),recruiter.getOrgName()});
+		jdbcTemplate.update(sql, new Object[] {recruiter.getUserName(),recruiter.getOrgName()});
 	 	try {
 			dataSource.getConnection().setAutoCommit(true);
 		} catch (SQLException e) {

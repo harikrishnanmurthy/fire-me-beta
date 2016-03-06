@@ -59,10 +59,10 @@ public class JobSeekerDaoImpl implements JobSeekerDao {
 
 	@Override
 	public String createJobSeeker(JobSeeker jobSeeker) {
-		String sql = "INSERT INTO JOB_SEEKER(JOB_SEEKER_ID,USER_ID,CUR_SALARY,EXP_SALARY,DESIGNATION,NOTICE_PERIOD,HAVE_NOC,COMPANY)VALUES(?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO JOB_SEEKER(USER_NAME,CUR_SALARY,EXP_SALARY,DESIGNATION,NOTICE_PERIOD,HAVE_NOC,COMPANY)VALUES(?,?,?,?,?,?,?)";
 		jdbcTemplate = new JdbcTemplate(getDataSource());
 		jdbcTemplate.update(sql,
-				new Object[] { jobSeeker.getJobseekerId(), jobSeeker.getUserId(), jobSeeker.getCurrentSalary(),
+				new Object[] {jobSeeker.getUserName(), jobSeeker.getCurrentSalary(),
 						jobSeeker.getExpSalary(), jobSeeker.getDesignation(), jobSeeker.getNoticePeriod(),
 						jobSeeker.isHasNoc(), jobSeeker.getCompanyName() });
 		try {

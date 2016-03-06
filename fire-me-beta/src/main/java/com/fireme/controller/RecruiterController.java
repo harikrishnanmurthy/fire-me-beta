@@ -35,9 +35,7 @@ public class RecruiterController {
 		user.setEmail(recruiter.getEmail());
 		user.setPhoneNo(recruiter.getPhoneNo());
 		user.setType("R");
-		user.setUserId("2");
 		
-		recruiter.setRecruiterId("2");
 		
 		userService.registerRecruiter(user, recruiter);
 		
