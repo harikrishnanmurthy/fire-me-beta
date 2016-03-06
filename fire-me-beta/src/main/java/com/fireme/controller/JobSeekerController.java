@@ -6,12 +6,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.fireme.model.JobSeeker;
+import com.fireme.model.User;
 import com.fireme.service.UserService;
 
 @Controller
@@ -22,10 +22,25 @@ public class JobSeekerController {
 	
 
 	@RequestMapping(value="/registerJobSeeker",method=RequestMethod.POST)
-	public ModelAndView executeLogin(HttpServletRequest request, HttpServletResponse response)
+	public ModelAndView executeLogin(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("jobSeeker") JobSeeker jobSeeker)
 	{
 		ModelAndView model= null;
-		System.out.println("Inside recruiter register");
+		System.out.println("Inside JobSeeker register");
+		
+		User user = new User();
+		user.setFirstName(jobSeeker.getFirstName());
+		user.setLastName(jobSeeker.getLastName());
+		user.setUserName(jobSeeker.getUserName());
+		user.setPassword(jobSeeker.getPassword());
+		user.setEmail(jobSeeker.getEmail());
+		user.setPhoneNo(jobSeeker.getPhoneNo());
+		user.setType("J");
+		user.setUserId("1");
+		
+		jobSeeker.setJobseekerId("1");
+		
+		userService.registerJobSeeker(user, jobSeeker);
+		
 		try
 		{
 //			

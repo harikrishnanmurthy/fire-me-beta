@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public void registerJobSeeker(User user, JobSeeker jobSeeker) {
-		usersDao.createuser(user);
+		usersDao.createUser(user);
 		jobSeekerDao.createJobSeeker(jobSeeker);
 	}
 
