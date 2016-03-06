@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+	<workbook>
+		<worksheet name="Master">
+			<section startRow="0" />
+				<loop startRow="0"  items="list" var="cust" varType="com.ambank.gst.web.model.CustomerOutputTaxManual">
+					<section startRow="0" >
+						<mapping cell="A1">cust.customerId</mapping>
+						<mapping cell="B1">cust.customerCIFId</mapping>
+						<mapping cell="C1">cust.customerName</mapping>
+						<mapping cell="D1">cust.customerStatus</mapping>
+						<mapping cell="E1">cust.customerGstNumber</mapping>  
+						<mapping cell="F1">cust.residenceCountryCode</mapping>  
+						<mapping cell="G1">cust.malaysianNonResident</mapping>  
+						<mapping cell="H1">cust.addressLine1</mapping>
+						<mapping cell="I1">cust.addressLine2</mapping>
+						<mapping cell="J1">cust.city</mapping>
+						<mapping cell="K1">cust.postalCode</mapping>
+						<mapping cell="L1">cust.state</mapping>
+						<mapping cell="M1">cust.country</mapping>
+						<mapping cell="N1">cust.mobileNumber</mapping>
+						<mapping cell="O1">cust.officeNumber</mapping>
+						<mapping cell="P1">cust.faxNumber</mapping>
+						<mapping cell="Q1">cust.emailAddress</mapping>
+						<mapping cell="R1">cust.website</mapping>
+					</section>
+				<loopbreakcondition>
+					<rowcheck offset="0">
+					<cellcheck offset="0"></cellcheck>
+					</rowcheck>
+				</loopbreakcondition>
+				</loop>
+		</worksheet>
+	</workbook> 

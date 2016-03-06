@@ -1,0 +1,73 @@
+/* 
+
+	As this stylesheet is lazy loaded these styles only apply if JavaScript is enabled
+
+*/
+.file-upload {
+	display: inline;
+	overflow: hidden;
+	position: relative;
+	vertical-align: middle;
+	text-align: center;
+	/* Cosmetics */
+	color: #fff;
+	border: 1px solid #49AFCD;
+	background: #49AFCD;
+}
+
+.file-upload:hover {
+	background: #49AFCD;
+}
+
+.file-upload.focus {
+	outline: 2px solid yellow;
+}
+
+.file-upload input {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 0;
+	font-size: 10px;
+	/* Loses tab index in webkit if width is set to 0 */
+	opacity: 0;
+	filter: alpha(opacity = 0);
+}
+
+.file-upload strong {
+	font: normal 1 em arial, sans-serif;
+}
+
+.file-upload span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	/* Adjust button text vertical alignment */
+	padding-top: 2px;
+}
+
+/* Adjust the button size */
+.file-upload {
+	height: 20px;
+	padding-left: 2px;
+}
+
+.file-upload,.file-upload span {
+	width: 102px;
+}
+
+.file-upload-status {
+	margin-left: 5px;
+	vertical-align: middle;
+	padding: 3px 19px;
+	font-weight: bold;
+	font-size: 10px;
+	color: #888;
+	border: 1px solid #ddd;
+	background: #FAFAFA;
+}
+
+.file-upload-status:hover {
+	background: url("img/close.gif") no-repeat center right;
+}
