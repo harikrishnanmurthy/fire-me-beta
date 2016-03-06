@@ -12,7 +12,7 @@ import com.fireme.dao.JobSeekerDao;
 import com.fireme.model.JobSeeker;
 
 @Component
-public class ApplicantionDaoImpl implements JobSeekerDao{
+public class ApplicationDaoImpl implements JobSeekerDao{
 private JdbcTemplate jdbcTemplate;
 	
 	@Autowired

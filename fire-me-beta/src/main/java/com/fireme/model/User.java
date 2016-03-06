@@ -1,6 +1,7 @@
 package com.fireme.model;
 
 public class User {
+	
     String userId;
 	String userName;
 	String password;
@@ -9,6 +10,7 @@ public class User {
 	String type;
 	String email;
 	String phoneNo;
+	
 	public String getUserName() {
 		return userName;
 	}

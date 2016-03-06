@@ -42,7 +42,7 @@ private JdbcTemplate jdbcTemplate;
 	public String createRecruiter(Recruiter recruiter) {
 		String sql = "INSERT INTO RECRUITER(recruiterId,userId,orgName,jobId)VALUES(?,?,?,?)";
 		jdbcTemplate = new JdbcTemplate(getDataSource());
-		jdbcTemplate.update(sql, new Object[] {recruiter.getRecruiterId(),recruiter.getUserId(),recruiter.getOrgName(),recruiter.getJobId()
+		jdbcTemplate.update(sql, new Object[] {recruiter.getRecruiterId(),recruiter.getUserId(),recruiter.getOrgName()
 				});
 	 	try {
 			dataSource.getConnection().setAutoCommit(true);
@@ -81,7 +81,7 @@ String sqlQuery="UPDATE RECRUITER SET jobId =?,userId =?,orgName =?WHERE recruit
 		
 		System.out.println("Update sql statement === " + sqlQuery);
 		jdbcTemplate = new JdbcTemplate(getDataSource());
-		jdbcTemplate.update(sqlQuery, recruiter.getJobId(),recruiter.getUserId(),recruiter.getOrgName(),recruiter.getRecruiterId());
+		jdbcTemplate.update(sqlQuery,recruiter.getUserId(),recruiter.getOrgName(),recruiter.getRecruiterId());
 		try {
 			dataSource.getConnection().setAutoCommit(true);
 		} catch (SQLException e) {

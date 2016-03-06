@@ -1,3 +1,4 @@
+
 $("document").ready(function(){
 	
 	$("#recruiter").click(function(){
@@ -8,5 +9,8 @@ $("document").ready(function(){
 		$('#jobSeekerRegisterDiv').modal('show');
 	});
 	
+	$("#registerJobSeeker").click(function(){
+		$('#registerJobSeekerForm').submit();
+	});
 });
 
