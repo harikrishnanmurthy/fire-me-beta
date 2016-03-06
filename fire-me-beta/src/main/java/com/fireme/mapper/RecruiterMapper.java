@@ -16,7 +16,6 @@ public class RecruiterMapper implements RowMapper<Recruiter> {
 		recruiter.setRecruiterId(rs.getString("RECRUITERID"));
 		recruiter.setOrgName(rs.getString("ORGNAME"));
 		recruiter.setUserId(rs.getString("USERID"));
-		recruiter.setJobId(rs.getString("JOBID"));
 	    return recruiter;
 	}
 }

@@ -13,7 +13,7 @@
         <h4 class="modal-title" id="myModalLabel">Job Seeker Registration</h4>
       </div>
       <div class="modal-body">
-      		<form action="registerJobSeeker" name="registerJobSeekerForm" id="registerJobSeekerForm" method="GET">
+      		<form action="registerJobSeeker" name="registerJobSeekerForm" id="registerJobSeekerForm" method="POST">
 	        	<label class="lbl" for="firstName">Your Name :</label> <input type="text" placeholder="First Name" id="firstName" name="firstName"  class="noEnterSubmit"/>
 	        	<input type="text" placeholder="Last Name" id="lastName" name="lastName"  class="noEnterSubmit"/><br/><br/>
 	            <label class="lbl" for="userName">User Name :</label> <input type="text" placeholder="User Name" id="userName" name="userName"  class="noEnterSubmit"/><br/><br/>

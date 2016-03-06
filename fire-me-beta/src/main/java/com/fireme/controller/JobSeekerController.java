@@ -21,7 +21,7 @@ public class JobSeekerController {
 	private UserService userService;
 	
 
-	@RequestMapping(value="/registerJobSeeker",method=RequestMethod.GET)
+	@RequestMapping(value="/registerJobSeeker",method=RequestMethod.POST)
 	public ModelAndView executeLogin(HttpServletRequest request, HttpServletResponse response)
 	{
 		ModelAndView model= null;

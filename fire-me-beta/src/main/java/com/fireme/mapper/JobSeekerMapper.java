@@ -16,7 +16,6 @@ public class JobSeekerMapper implements RowMapper<JobSeeker> {
 		
 		JobSeeker jobSeeker=new JobSeeker();		
 		        
-		jobSeeker.setJobId(rs.getString("JOB_ID"));
 		jobSeeker.setJobseekerId(rs.getString("JOB_SEEKER_ID"));
 		jobSeeker.setCompanyName(rs.getString("COMPANY_NAME"));
 		jobSeeker.setDesignation(rs.getString("DESIGNATION"));
