@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 	
-	@RequestMapping(value = "/primary**", method = RequestMethod.GET)
+	@RequestMapping(value = "/menu**", method = RequestMethod.GET)
 	public ModelAndView adminPage(HttpServletRequest request) {
 
 		ModelAndView model = new ModelAndView();
@@ -42,12 +42,12 @@ public class LoginController {
 //		if(loggedInFlag.equalsIgnoreCase("Y")){
 //			model.setViewName("invalidSession");
 //		}else{
-			model.setViewName("primary");
+			model.setViewName("menu");
 //		}
 			return model;
 		}
 		else{
-			model.setViewName("invalidUser");
+			model.setViewName("menu");
 			return model;
 		}
 

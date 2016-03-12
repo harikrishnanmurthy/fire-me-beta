@@ -24,7 +24,7 @@ public class RecruiterController {
 	@RequestMapping(value="/registerRecruiter",method=RequestMethod.POST)
 	public ModelAndView executeLogin(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("recruiter") Recruiter recruiter)
 	{
-		ModelAndView model= null;
+		ModelAndView model= new ModelAndView();
 		System.out.println("Inside JobSeeker register");
 		
 		User user = new User();
@@ -48,6 +48,7 @@ public class RecruiterController {
 			e.printStackTrace();
 		}
 
+		model.setViewName("menu");
 		return model;
 	}
 }

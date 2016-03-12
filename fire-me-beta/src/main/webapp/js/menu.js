@@ -1,0 +1,10 @@
+$(function(){
+	$("#dashboard").click(function(){
+		console.log("Hi");
+		$("#dframe").attr("src","dashboard.jsp")
+	});
+	$("#customers").click(function(){
+		console.log("Hi");
+		$("#dframe").attr("src","sample.jsp")
+	});
+});

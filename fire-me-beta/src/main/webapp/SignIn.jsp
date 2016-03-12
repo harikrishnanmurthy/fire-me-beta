@@ -4,7 +4,7 @@
 <head>
 <title>FireMe #beta</title>
 <%@include file="resources.jsp" %>
-<%-- <%@include file="recruiterRegister.jsp" %> --%>
+<link href="css/signin.css" rel="stylesheet">
 <style>
 	html { 
 	  background: url(skyline_2.jpg) no-repeat center center fixed; 
@@ -43,9 +43,8 @@
 		<input class='btn btn-lg btn-warning margin-left31' name="recruiter" id="recruiter" value="New Recruiter" />
 		<input class='btn btn-lg btn-warning margin-left5' name="jobSeeker" id="jobSeeker" value="New Job Seeker" />
 	</div>
-	
 <%@include file="recruiterRegister.jsp" %>
 <%@include file="jobSeekerRegister.jsp" %>
-
 </body>
+<script type="text/javascript" src="js/login.js"></script>
 </html>
