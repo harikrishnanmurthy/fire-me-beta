@@ -3,8 +3,8 @@ $(function(){
 		console.log("Hi");
 		$("#dframe").attr("src","dashboard.jsp")
 	});
-	$("#customers").click(function(){
+	$("#listings").click(function(){
 		console.log("Hi");
-		$("#dframe").attr("src","sample.jsp")
+		$("#dframe").attr("src","jobListings.jsp")
 	});
 });

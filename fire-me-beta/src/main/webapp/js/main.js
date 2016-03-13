@@ -46,14 +46,10 @@ $("document").ready(function(){
 	$(".dataCheckpoint").tooltip({title: "This data is included in the active checkpoint."});
 	$(".queuedData").tooltip({title: "This data is in the queue awaiting to be executed."});
 	
-	if ($.browser.msie && parseInt($.browser.version, 10) <= 8) {
-		// do nothing as it causes a loop in IE 7 & 8
-	} else {
 		// Resize results table header on window resize
 		$(window).on('resize', function() {
 			resizeSparqlResults();
 		});
-	}
 });
 
 

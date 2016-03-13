@@ -7,7 +7,7 @@
 <style>
 body {
 	padding: 0;
-	margin: 0%;
+	margin: 2%;
 }
 
 #canvas-holder {
@@ -18,11 +18,11 @@ body {
 <body>
 
 	<div style="width: 100%;">
-		<div style="float: left; width: 30%">
-			<canvas id="chart-area" width="300" height="300" />
+		<div style="float: left; width: 25%">
+			<canvas id="chart-area" width="200" height="200"></canvas>
 		</div>
 		<div style="float: right;">
-			<canvas id="canvas" height="350" width="500"></canvas>
+			<canvas id="canvas" height="250" width="450"></canvas>
 		</div>
 	</div>
 	<div style="clear: both"></div>

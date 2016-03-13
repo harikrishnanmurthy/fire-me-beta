@@ -15,11 +15,6 @@
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="js/bootbox.min.js"></script>
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="js/jquery.dataTables.js"></script>
-	<script type="text/javascript" src="js/datatable.js"></script>
-	<script type="text/javascript" src="js/datatable.filterclear.js"></script>
-	<script type="text/javascript" src="js/datatable.findcellrownodes.js"></script>
-	<script type="text/javascript" src="js/datatable.sort.js"></script>
 </head>
 <body>
 </body>
