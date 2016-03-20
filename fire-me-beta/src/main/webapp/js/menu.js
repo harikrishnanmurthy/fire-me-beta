@@ -10,7 +10,8 @@ $(function(){
 	$("#profile").click(function(){
 		console.log("Hi");
 		console.log("check");
-	
+		console.log("test");
+
 		$("#dframe").attr("src","profile.jsp")
 	});
 });
