@@ -7,4 +7,8 @@ $(function(){
 		console.log("Hi");
 		$("#dframe").attr("src","jobListings.jsp")
 	});
+	$("#profile").click(function(){
+		console.log("Hi");
+		$("#dframe").attr("src","profile.jsp")
+	});
 });

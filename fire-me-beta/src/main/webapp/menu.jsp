@@ -18,7 +18,7 @@
 			<li tabindex="0" class="icon-dashboard"><span id="dashboard">Dashboard</span></li>
 			<li tabindex="0" class="icon-customers"><span id="listings">Job Listings</span></li>
 			<li tabindex="0" class="icon-users"><span>Users</span></li>
-			<li tabindex="0" class="icon-settings"><span>Settings</span></li>
+			<li tabindex="0" class="icon-settings"><span id="profile">Profile</span></li>
 		</ul>
 	</nav>
 
