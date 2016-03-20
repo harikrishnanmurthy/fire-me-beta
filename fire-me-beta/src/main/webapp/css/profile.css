@@ -1,0 +1,115 @@
+.margin12 {
+    margin: 12px;
+}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	padding:10px 10px;
+	margin:0 0 10px 0;
+	font-size:15px;
+	line-height:1.2em;
+	text-transform:none;
+	color:#323232;
+	font-weight:bold;
+	text-decoration:none;
+	position:relative;
+	height:47px;
+	border-radius:3px;
+	background:#fff;
+	box-shadow:none;
+	border:1px solid #dadada !important;
+	transition:all 0.3s ease 0s;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+textarea::-moz-placeholder, input[type="text"]::-moz-placeholder, input[type="password"]::-moz-placeholder, input[type="datetime"]::-moz-placeholder, input[type="datetime-local"]::-moz-placeholder, input[type="date"]::-moz-placeholder, input[type="month"]::-moz-placeholder, input[type="time"]::-moz-placeholder, input[type="week"]::-moz-placeholder, input[type="number"]::-moz-placeholder, input[type="email"]::-moz-placeholder, input[type="url"]::-moz-placeholder, input[type="search"]::-moz-placeholder, input[type="tel"]::-moz-placeholder, input[type="color"]::-moz-placeholder, .uneditable-input::-moz-placeholder {
+	color:#323232;
+	opacity:1;
+}
+
+.jobSeekerForm > fieldset label {
+    display: block;
+    margin: 0;
+    width: 29%;
+    float: left;
+    vertical-align: middle;
+}
+
+.jobSeekerForm fieldset div.field {
+    width: 70%;
+    float: right;
+    vertical-align: middle;
+}
+
+.jobSeekerForm fieldset small.description {
+    opacity: .75;
+    font-size: .83em;
+    margin: 1.2em 0 0;
+    display: block;
+    line-height: 1.2em;
+}
+
+.jobSeekerForm > fieldset label {
+	font:bold 21px/1.2em 'Lato', sans-serif;
+	color: #23ba85;
+	padding:10px 0;
+}
+
+@media (max-width: 767px) {
+	.jobSeekerForm > fieldset div.field {
+		width:100%;
+		float:none;
+	}
+}
+
+@media (max-width: 767px) {
+	.jobSeekerForm > fieldset label {
+		display:block;
+		width:100%;
+		padding:0 0 10px;
+		float:none;
+	}
+}
+
+.jobSeekerForm fieldset {
+	border:none;
+	margin:0;
+    padding: 0 0 1em;
+    line-height: 2em;
+/*     border: 0; */
+/*     border-bottom: 1px solid #eee; */
+    zoom: 1;
+}
+
+.jobSeekerForm > fieldset label small {
+	font:13px/1.2em 'Lato', sans-serif;
+	color:#777;
+}
+.jobSeekerForm > fieldset .jq-selectbox { width:100%; }
+.jobSeekerForm > h2, .jobSeekerForm .submit-wrap {
+	border-top:1px solid #dfdede;
+	padding:50px 0 0;
+	margin:50px 0 40px;
+}
+.jobSeekerForm .btn.input-btn.green { background:#23ba85; }
+.jobSeekerForm .btn.input-btn.green:before { background:#323232; }
+.jobSeekerForm .btn.input-btn.green span:after { display:none; }
+.jobSeekerForm .btn.input-btn.green span input {
+	color:#fff;
+	display:inline-block;
+}
+.jobSeekerForm .line {
+	width:100%;
+	height:1px;
+	background:#dfdede;
+	margin:40px 0 60px;
+}
+
+.jobSeekerForm fieldset input.input-text, .jobSeekerForm fieldset select, .jobSeekerForm fieldset textarea {
+    margin: 0;
+    vertical-align: middle;
+    width: 80%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.jobSeekerForm .account-sign-in { padding:10px 0; }
