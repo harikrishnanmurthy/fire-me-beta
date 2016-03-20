@@ -51,6 +51,7 @@ public class JobSeekerController {
 		}
 
 		model.setViewName("menu");
+		model.addObject("type", "J");
 		return model;
 	}
 

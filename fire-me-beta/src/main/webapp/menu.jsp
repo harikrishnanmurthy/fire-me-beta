@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <head>
 <meta charset="UTF-8">
 <title>Menu</title>
@@ -14,17 +16,28 @@
 				src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />
 			<h2>John D.</h2>
 		</header>
-		<ul>
-			<li tabindex="0" class="icon-dashboard"><span id="dashboard">Dashboard</span></li>
-			<li tabindex="0" class="icon-customers"><span id="listings">Job Listings</span></li>
-			<li tabindex="0" class="icon-man"><span id="profile">Profile</span></li>
-			<li tabindex="0" class="icon-settings"><span id="settings">Settings</span></li>
-			<li tabindex="0" class="icon-block"><span id="signout">Sign Out</span></li>
-		</ul>
+		<c:if test="${requestScope.type == 'J'}">
+			<ul>
+				<li tabindex="0" class="icon-dashboard"><span id="jobSeekerDashboard">Dashboard</span></li>
+				<li tabindex="0" class="icon-customers"><span id="jobListings">Job Listings</span></li>
+				<li tabindex="0" class="icon-man"><span id="jobSeekerProfile">Profile</span></li>
+				<li tabindex="0" class="icon-settings"><span id="settings">Settings</span></li>
+				<li tabindex="0" class="icon-block"><span id="signout">Sign Out</span></li>
+			</ul>
+		</c:if>
+		<c:if test="${requestScope.type == 'R'}">
+			<ul>
+				<li tabindex="0" class="icon-dashboard"><span id="recruiterDashboard">Dashboard</span></li>
+				<li tabindex="0" class="icon-customers"><span id="jobSeekerListings">Job Seeker Listings</span></li>
+				<li tabindex="0" class="icon-man"><span id="recruiterProfile">Profile</span></li>
+				<li tabindex="0" class="icon-settings"><span id="settings">Settings</span></li>
+				<li tabindex="0" class="icon-block"><span id="signout">Sign Out</span></li>
+			</ul>
+		</c:if>
 	</nav>
 
 	<main>
-	<iframe src="dashboard.jsp" name="displayFrame" id="dframe" class="upload"
+	<iframe src="jobSeekerDashboard.jsp" name="displayFrame" id="dframe" class="upload"
 		frameborder="0"
 		style="border: 0; overflow: hidden; height: 100%; width: 100%">
 		<p>Please select a link to display content here !</p>

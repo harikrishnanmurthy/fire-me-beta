@@ -10,7 +10,6 @@
 
 <body>
 <% 
-
 session.invalidate();
 response.sendRedirect("j_spring_security_logout");
 %>

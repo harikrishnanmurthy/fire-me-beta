@@ -1,21 +1,32 @@
 $(function(){
-	$("#dashboard").click(function(){
+	$("#jobSeekerDashboard").click(function(){
 		console.log("dashboard");
-		$("#dframe").attr("src","dashboard.jsp")
+		$("#dframe").attr("src","jobSeekerDashboard.jsp")
 	});
-	$("#listings").click(function(){
+	$("#jobListings").click(function(){
 		console.log("jobListings");
 		$("#dframe").attr("src","jobListings.jsp")
 	});
-	$("#profile").click(function(){
+	$("#jobSeekerProfile").click(function(){
 		console.log("profile");
-		$("#dframe").attr("src","profile.jsp")
+		$("#dframe").attr("src","jobSeekerProfile.jsp")
 	});
 	$("#signout").click(function(){
 		console.log("signout");
-		
 		window.location.href = 'signOut.jsp';
-		//$("#dframe").attr("src","signIn.jsp")
+	});
+	
+	$("#recruiterDashboard").click(function(){
+		console.log("profile");
+		$("#dframe").attr("src","recruiterDashboard.jsp")
+	});
+	$("#recruiterProfile").click(function(){
+		console.log("profile");
+		$("#dframe").attr("src","recruiterProfile.jsp")
+	});
+	$("#jobSeekerListings").click(function(){
+		console.log("profile");
+		$("#dframe").attr("src","jobSeekerListings.jsp")
 	});
 
 });

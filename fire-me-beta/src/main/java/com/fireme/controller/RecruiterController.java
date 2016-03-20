@@ -49,6 +49,7 @@ public class RecruiterController {
 		}
 
 		model.setViewName("menu");
+		model.addObject("type", "R");
 		return model;
 	}
 }
