@@ -15,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LoginController {
-	
+
 	@RequestMapping(value = "/menu**", method = RequestMethod.GET)
 	public ModelAndView adminPage(HttpServletRequest request) {
 
@@ -70,4 +70,5 @@ public class LoginController {
 		return model;
 
 	}
+
 }

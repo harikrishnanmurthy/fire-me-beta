@@ -19,7 +19,7 @@
         	<label class="lbl" for="companyName">Organization :</label> <input type="text" placeholder="Organisation" id="companyName" name="companyName"  class="noEnterSubmit"/><br/><br/>
             <label class="lbl" for="userName">User Name :</label> <input type="text" placeholder="User Name" id="userName" name="userName"  class="noEnterSubmit"/><br/><br/>
             <label class="lbl" for="emailID">Company Email ID :</label> <input type="text" placeholder="Company Email ID" id="emailID" name="emailID"  class="noEnterSubmit"/><br/><br/>
-            <label class="lbl" for="password1">Password :</label> <input type="text" placeholder="Password" id="password1" name="password1"  class="noEnterSubmit"/><br/><br/>
+            <label class="lbl" for="password1">Password :</label> <input type="text" placeholder="Password" id="password1" name="password"  class="noEnterSubmit"/><br/><br/>
             <label class="lbl" for="password2">Repeat Password :</label> <input type="text" placeholder="Repeat Password" id="password2" name="password2"  class="noEnterSubmit"/><br/><br/>
             <input type="hidden" id="type" name="type" class="noEnterSubmit" value="recruiter"/>
          </form>

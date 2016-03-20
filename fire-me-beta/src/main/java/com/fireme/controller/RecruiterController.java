@@ -4,6 +4,10 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +24,9 @@ public class RecruiterController {
 	@Inject
 	private UserService userService;
 	
-
+	@Inject
+    protected AuthenticationManager authenticationManager;
+	
 	@RequestMapping(value="/registerRecruiter",method=RequestMethod.POST)
 	public ModelAndView executeLogin(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("recruiter") Recruiter recruiter)
 	{
@@ -28,20 +34,20 @@ public class RecruiterController {
 		System.out.println("Inside JobSeeker register");
 		
 		User user = new User();
-		user.setFirstName(recruiter.getFirstName());
-		user.setLastName(recruiter.getLastName());
-		user.setUserName(recruiter.getUserName());
-		user.setPassword(recruiter.getPassword());
-		user.setEmail(recruiter.getEmail());
-		user.setPhoneNo(recruiter.getPhoneNo());
-		user.setType("R");
-		
-		
-		userService.registerRecruiter(user, recruiter);
-		
+
 		try
 		{
-//			
+			user.setFirstName(recruiter.getFirstName());
+			user.setLastName(recruiter.getLastName());
+			user.setUserName(recruiter.getUserName());
+			user.setPassword(recruiter.getPassword());
+			user.setEmail(recruiter.getEmail());
+			user.setPhoneNo(recruiter.getPhoneNo());
+			user.setType("R");
+			
+			userService.registerRecruiter(user, recruiter);
+			
+			authenticateUserAndSetSession(user, request);
 		}
 		catch(Exception e)
 		{
@@ -52,4 +58,16 @@ public class RecruiterController {
 		model.addObject("type", "R");
 		return model;
 	}
+	
+    private void authenticateUserAndSetSession(User user, HttpServletRequest request) {
+        String username = user.getUserName();
+        String password = user.getPassword();
+
+        // generate session if one doesn't exist
+        request.getSession();
+
+        Authentication authenticatedUser = new UsernamePasswordAuthenticationToken(username, password);
+        SecurityContextHolder.getContext().setAuthentication(authenticatedUser);
+    }
+
 }
