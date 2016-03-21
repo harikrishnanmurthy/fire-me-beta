@@ -39,8 +39,8 @@ public class JobSeekerController {
 			@ModelAttribute("jobSeeker") JobSeeker jobSeeker) {
 		ModelAndView model = new ModelAndView();
 		System.out.println("Inside JobSeeker register");
+		User user = new User();
 		try {
-			User user = new User();
 			user.setFirstName(jobSeeker.getFirstName());
 			user.setLastName(jobSeeker.getLastName());
 			user.setUserName(jobSeeker.getUserName());
@@ -57,6 +57,7 @@ public class JobSeekerController {
 			e.printStackTrace();
 		}
 
+		model.addObject("username", user.getFirstName()+" "+ user.getLastName());
 		model.setViewName("menu");
 		model.addObject("type", "J");
 		return model;

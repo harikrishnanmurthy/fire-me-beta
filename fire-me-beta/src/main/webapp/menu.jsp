@@ -14,7 +14,7 @@
 		<header class="avatar">
 			<img
 				src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />
-			<h2>John D.</h2>
+			<h2><c:out value="${requestScope.username}"></c:out></h2>
 		</header>
 		<c:if test="${requestScope.type == 'J'}">
 			<ul>
