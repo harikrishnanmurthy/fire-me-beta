@@ -29,7 +29,7 @@
 			<br>
 				<input type='text' placeholder="Username" name='username' class='form-control'>
 				<br>
-				<input type='text' placeholder="Password" name='password' class='form-control'>
+				<input type='password' placeholder="Password" name='password' class='form-control'>
 				<br>
 				<input class='btn btn-lg btn-primary btn-block' name="submit" type="submit"
 						value="Sign In	" />
