@@ -38,9 +38,9 @@ private JdbcTemplate jdbcTemplate;
 	}
 	@Override
 	public String createUser(User user) {
-		String sql = "INSERT INTO USER(USER_NAME,PASSWORD,FIRST_NAME,LAST_NAME,TYPE,EMAIL_ID,PHONE)VALUES(?,?,?,?,?,?,?);";
+		String sql = "INSERT INTO USER(USERNAME,PASSWORD,FIRST_NAME,LAST_NAME,TYPE,EMAIL_ID,PHONE,ROLE)VALUES(?,?,?,?,?,?,?,?);";
 		jdbcTemplate = new JdbcTemplate(getDataSource());
-		jdbcTemplate.update(sql, new Object[] {user.getUserName(),user.getPassword(),user.getFirstName(),user.getLastName(),user.getType(),user.getEmail(),user.getPhoneNo()});
+		jdbcTemplate.update(sql, new Object[] {user.getUserName(),user.getPassword(),user.getFirstName(),user.getLastName(),user.getType(),user.getEmail(),user.getPhoneNo(), user.getRole()});
 	 	try {
 			dataSource.getConnection().setAutoCommit(true);
 		} catch (SQLException e) {
@@ -90,11 +90,11 @@ private JdbcTemplate jdbcTemplate;
 		}
 
 	@Override
-	public User findUser(String userId) {
-		String sql = "Select * from User where userId =?";
+	public User findUser(String userName) {
+		String sql = "Select * from user where username =?";
 		jdbcTemplate = new JdbcTemplate(getDataSource());
 		User user = (User)jdbcTemplate.queryForObject(
-				sql, new Object[] { userId }, new UserMapper());
+				sql, new Object[] { userName }, new UserMapper());
 			
 		return user;
 	}

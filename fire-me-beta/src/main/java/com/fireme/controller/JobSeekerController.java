@@ -48,6 +48,7 @@ public class JobSeekerController {
 			user.setEmail(jobSeeker.getEmail());
 			user.setPhoneNo(jobSeeker.getPhoneNo());
 			user.setType("J");
+			user.setRole("ROLE_USER");
 
 			userService.registerJobSeeker(user, jobSeeker);
 			authenticateUserAndSetSession(user, request);

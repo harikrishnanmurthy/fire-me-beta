@@ -10,6 +10,7 @@ public class User {
 	String type;
 	String email;
 	String phoneNo;
+	String role;
 	
 	public String getUserName() {
 		return userName;
@@ -104,6 +105,14 @@ public class User {
 		this.type = type;
 		this.email = email;
 		this.phoneNo = phoneNo;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	

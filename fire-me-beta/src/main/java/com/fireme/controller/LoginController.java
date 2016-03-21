@@ -2,6 +2,7 @@ package com.fireme.controller;
 
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.security.core.Authentication;
@@ -13,8 +14,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fireme.dao.Impl.UserDaoImpl;
+import com.fireme.model.User;
+
 @Controller
 public class LoginController {
+	
+	@Inject
+	UserDaoImpl userDao;
 
 	@RequestMapping(value = "/menu**", method = RequestMethod.GET)
 	public ModelAndView adminPage(HttpServletRequest request) {
@@ -24,6 +31,8 @@ public class LoginController {
 		Authentication auth  = SecurityContextHolder.getContext().getAuthentication();
 		
 		String loggedInUser = auth.getName();
+		
+		User user = userDao.findUser(loggedInUser);
 		List<? extends GrantedAuthority> authCollect = (List<? extends GrantedAuthority>) auth.getAuthorities();
 		String role = authCollect.get(0).getAuthority();
 		if(!role.equalsIgnoreCase("ROLE_ANONYMOUS")){
@@ -42,6 +51,8 @@ public class LoginController {
 //		if(loggedInFlag.equalsIgnoreCase("Y")){
 //			model.setViewName("invalidSession");
 //		}else{
+		
+			model.addObject("type", user.getType());
 			model.setViewName("menu");
 //		}
 			return model;

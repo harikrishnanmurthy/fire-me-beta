@@ -44,9 +44,9 @@ public class RecruiterController {
 			user.setEmail(recruiter.getEmail());
 			user.setPhoneNo(recruiter.getPhoneNo());
 			user.setType("R");
+			user.setRole("ROLE_USER");
 			
 			userService.registerRecruiter(user, recruiter);
-			
 			authenticateUserAndSetSession(user, request);
 		}
 		catch(Exception e)
