@@ -5,7 +5,6 @@ import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.ambank.gst.web.model.FITRModel;
 import com.fireme.model.User;
 
 public class UserMapper implements RowMapper<User> {

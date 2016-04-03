@@ -14,31 +14,6 @@
 <!-- 	    <property name="userDetailsContextMapper" ref="myUserDetailsContextMapper" /> -->
 <!-- 	</bean> -->
 	
-	 <!-- Customizing UserDetail -->
-  <bean id="myUserDetailsContextMapper" class="com.ambank.gst.web.controller.GSTDbAuthPopulator">
-  	<property name="dataSource" ref="dataSource" />
-  </bean>
-  
-  <bean id="userDao" class="com.ambank.gst.web.dao.ManageUserDAOImpl">
-  	<property name="dataSource" ref="dataSource" />
-  </bean>
-  
-   <bean id="taxCodeDao" class="com.ambank.gst.web.dao.TaxCodeDAOImpl">
-  	<property name="dataSource" ref="dataSource" />
-   </bean>
-   
-   <bean id="mappingDao" class="com.ambank.gst.web.dao.GSTMappingDAOImpl">
-  	<property name="dataSource" ref="dataSource" />
-   </bean>
-   
-   <bean id="fitrDao" class="com.ambank.gst.web.dao.FITRDAOImpl">
-  	<property name="dataSource" ref="dataSource" />
-   </bean>
-   
-   <bean id="legalDao" class="com.ambank.gst.web.dao.LegalEntityDAOImpl">
-  	<property name="dataSource" ref="dataSource" />
-   </bean>
-  
    <bean id="dataSource" 
          class="org.springframework.jdbc.datasource.DriverManagerDataSource">
  	    <property name="driverClassName" value="com.mysql.jdbc.Driver" />
