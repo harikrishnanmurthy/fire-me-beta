@@ -26,7 +26,7 @@ body {
 		</div>
 	</div>
 	<div style="clear: both"></div>
-	<div style="width: 30%; margin-left: auto; margin-right: auto">
+	<div style="width: 34.5%; margin-left: auto; margin-right: auto">
 		<canvas id="canvas1" height="250" width="250"></canvas>
 	</div>
 </body>

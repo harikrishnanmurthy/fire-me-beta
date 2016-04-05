@@ -39,7 +39,7 @@
 	<main>
 	<iframe src="jobSeekerDashboard.jsp" name="displayFrame" id="dframe" class="upload"
 		frameborder="0"
-		style="border: 0; overflow: hidden; height: 100%; width: 100%">
+		style="border: 0; overflow: hidden; height: 100%; width: 95%">
 		<p>Please select a link to display content here !</p>
 	</iframe>
 	</main>
