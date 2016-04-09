@@ -9,6 +9,8 @@ public class JobSeeker extends User {
 	String designation;
 	boolean hasNoc;
 	int noticePeriod;
+	Double experience;
+	String skills;
 
 	public Double getCurrentSalary() {
 		return currentSalary;
@@ -88,6 +90,22 @@ public class JobSeeker extends User {
 		this.designation = designation;
 		this.hasNoc = hasNoc;
 		this.noticePeriod = noticePeriod;
+	}
+
+	public Double getExperience() {
+		return experience;
+	}
+
+	public void setExperience(Double experience) {
+		this.experience = experience;
+	}
+
+	public String getSkills() {
+		return skills;
+	}
+
+	public void setSkills(String skills) {
+		this.skills = skills;
 	}
 
 }

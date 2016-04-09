@@ -4,14 +4,13 @@
 textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
 	padding:10px 10px;
 	margin:0 0 10px 0;
-	font-size:15px;
-	line-height:1.2em;
+	font-size:12px;
+	line-height:1.0em;
 	text-transform:none;
 	color:#323232;
-	font-weight:bold;
 	text-decoration:none;
 	position:relative;
-	height:47px;
+	height:30px;
 	border-radius:3px;
 	background:#fff;
 	box-shadow:none;
@@ -49,7 +48,7 @@ textarea::-moz-placeholder, input[type="text"]::-moz-placeholder, input[type="pa
 }
 
 .jobSeekerForm > fieldset label {
-	font:bold 21px/1.2em 'Lato', sans-serif;
+	font:  12px/1.2em 'Lato', sans-serif;
 	color: #23ba85;
 	padding:10px 0;
 }
@@ -107,7 +106,7 @@ textarea::-moz-placeholder, input[type="text"]::-moz-placeholder, input[type="pa
 .jobSeekerForm fieldset input.input-text, .jobSeekerForm fieldset select, .jobSeekerForm fieldset textarea {
     margin: 0;
     vertical-align: middle;
-    width: 80%;
+    width: 50%;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;

@@ -22,6 +22,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import com.fireme.model.Job;
 import com.fireme.model.JobSeeker;
 import com.fireme.model.User;
+import com.fireme.service.JobSeekerService;
 import com.fireme.service.UserService;
 
 @Controller
@@ -30,6 +31,9 @@ public class JobSeekerController {
 
 	@Inject
 	private UserService userService;
+	
+	@Inject
+	private JobSeekerService jobSeekerService;
 
 	@Inject
     protected AuthenticationManager authenticationManager;
@@ -57,7 +61,8 @@ public class JobSeekerController {
 			e.printStackTrace();
 		}
 
-		model.addObject("username", user.getFirstName()+" "+ user.getLastName());
+		model.addObject("fullname", user.getFirstName()+" "+ user.getLastName());
+		model.addObject("username", user.getUserName());
 		model.setViewName("menu");
 		model.addObject("type", "J");
 		return model;
@@ -96,6 +101,13 @@ public class JobSeekerController {
 		jobList.add(new Job("BT", "Java Developer", "BJ001"));
 		jobList.add(new Job("Randstad", "Java Developer", "RJ001"));
 		return jobList;
+	}
+	
+	@RequestMapping(value = "/jobSeekerprofile", method = RequestMethod.POST)
+	public String updateRecruiterProfile(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("jobSeeker") JobSeeker jobSeeker) {
+		System.out.println("Inside update profile job seeker");
+		jobSeekerService.updateJobSeeker(jobSeeker);
+		return "updateRecruiterProfile";
 	}
 	
     private void authenticateUserAndSetSession(User user, HttpServletRequest request) {

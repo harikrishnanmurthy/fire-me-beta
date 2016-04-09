@@ -14,7 +14,8 @@
 		<header class="avatar">
 			<img
 				src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />
-			<h2><c:out value="${requestScope.username}"></c:out></h2>
+			<h2><c:out value="${requestScope.fullname}"></c:out></h2>
+			<input type="hidden" id="menuusername" value="${requestScope.username}">
 		</header>
 		<c:if test="${requestScope.type == 'J'}">
 			<ul>
@@ -39,7 +40,7 @@
 	<main>
 	<iframe src="jobSeekerDashboard.jsp" name="displayFrame" id="dframe" class="upload"
 		frameborder="0"
-		style="border: 0; overflow: hidden; height: 100%; width: 95%">
+		style="border: 0; overflow: hidden; height: 100%; width: 100%">
 		<p>Please select a link to display content here !</p>
 	</iframe>
 	</main>

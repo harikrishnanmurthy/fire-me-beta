@@ -17,7 +17,7 @@
 	        	<label class="lbl" for="firstName">Your Name :</label> <input type="text" placeholder="First Name" id="firstName" name="firstName"  class="noEnterSubmit"/>
 	        	<input type="text" placeholder="Last Name" id="lastName" name="lastName"  class="noEnterSubmit"/><br/><br/>
 	            <label class="lbl" for="userName">User Name :</label> <input type="text" placeholder="User Name" id="userName" name="userName"  class="noEnterSubmit"/><br/><br/>
-	            <label class="lbl" for="emailID">Your Email ID :</label> <input type="text" placeholder="Your Email ID" id="emailID" name="emailID"  class="noEnterSubmit"/><br/><br/>
+	            <label class="lbl" for="emailID">Your Email ID :</label> <input type="text" placeholder="Your Email ID" id="email" name="email"  class="noEnterSubmit"/><br/><br/>
 	            <label class="lbl" for="password1">Password :</label> <input type="password" placeholder="Password" id="password1" name="password"  class="noEnterSubmit"/><br/><br/>
 	            <label class="lbl" for="password2">Repeat Password :</label> <input type="password" placeholder="Repeat Password" id="password2" name="password2"  class="noEnterSubmit"/><br/><br/>
 	            <input type="hidden" id="type" name="type" class="noEnterSubmit" value="recruiter"/>

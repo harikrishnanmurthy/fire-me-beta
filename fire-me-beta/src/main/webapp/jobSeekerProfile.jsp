@@ -1,70 +1,121 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!doctype html>
+<html lang="en-US">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>PROFILE</title>
-
-    <link href="css/profile.css" rel="stylesheet">
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-
+<%@include file="resources.jsp" %>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html">
+  <link rel="shortcut icon" href="http://static.tmimgcdn.com/img/favicon.ico">
+  <link rel="icon" href="http://static.tmimgcdn.com/img/favicon.ico">
+  <link rel="stylesheet" type="text/css" media="all" href="css/styles.css">
+  <link rel="stylesheet" type="text/css" media="all" href="css/switchery.min.css">
+  <script type="text/javascript" src="js/switchery.min.js"></script>
 </head>
+
 <body>
-<!--     <div class="row"> -->
-   	 <div style="margin: 12px;">	
-   	 <div id="jobSeekerProfileDiv" class="span12">
- 		<form action="jobSeekerProfile" name="registerJobSeekerForm" class="jobSeekerForm" id="registerJobSeekerForm" method="POST">
-			<fieldset>
-				<label for="firstName">Your Name </label> 
-				<div class="field"><input type="text" placeholder="Full Name" class="input-text" id="firstName" name="firstName"/></div>
-			</fieldset>
-		    <fieldset>
-		    	<label for="emailID">Your Email </label>
-		    	<div class="field"><input type="text" class="input-text"  placeholder="Email" id="emailID" name="emailID"/></div>
-		    </fieldset>
-		    <fieldset>
-		    	<label for="emailID">Professional Title </label> 
-		    	<div class="field"><input type="text" class="input-text"  placeholder="eg: Java Developer" id="emailID" name="emailID"/></div>
-		    </fieldset>
-		    <fieldset>
-		    	<label for="emailID">Notice Period </label> 
-		    	<div class="field"><input type="text" class="input-text"  placeholder="In days" id="emailID" name="emailID"/></div>
-		    </fieldset>
-		    <fieldset>
-		    	<label for="emailID">Years of Experience </label> 
-		    	<div class="field"><input type="text" class="input-text"  placeholder="Years of Experience" id="emailID" name="emailID"/></div>
-		    </fieldset>
-		    <fieldset class="fieldset">
-		    	<label for="Photo">Photo</label>
-		    	<div class="field">
-		    		<input type="file" class="input-text" placeholder="Photo" id="photo" name="photo"/>
-		    		<small class="description">Maximum file size: 16 MB. </small>
-		    	</div>
-		    </fieldset>
-		    <fieldset>
-		    	<label for="emailID">Video</label>
-		    	<div class="field"><input type="text" class="input-text" placeholder="A link to a video about yourself" id="emailID" name="emailID"/></div>
-		    </fieldset>
-		    <fieldset>
-		    	<label for="emailID">Skills</label>
-		    	<div class="field"><input type="text" class="input-text"  placeholder="Separate using comma relevant skill set" id="emailID" name="emailID"/></div>
-		    </fieldset>
-		    <fieldset>
-		    	<label for="emailID">Resume Upload</label> 
-		    	<div class="field">
-		    		<input type="file" class="input-text" placeholder="Resume Upload" id="emailID" name="emailID"/>
-		    		<small class="description">Upload in word/pdf format</small>
-		    	</div>
-		    </fieldset>
-		    <fieldset>
-		    	<label for="emailID">Contact Number</label>
-		    	<div class="field"><input type="text" class="input-text"  placeholder="Contact Number" id="emailID" name="emailID"/></div>
-		    </fieldset>
-		    <input type="hidden" id="type" name="type" class="noEnterSubmit" value="recruiter"/>
-		</form>
-	 </div>
-	 </div>
-<!-- 	</div> -->
+  <div id="wrapper">
+  <form action="jobSeekerprofile" name="registerJobSeekerForm" class="jobSeekerForm" id="registerJobSeekerForm" method="POST">
+  <input type="hidden" id="userName" name="userName"/>
+  <div class="col-2">
+    <label>
+      Name
+      <input placeholder="What is your full name?" id="fullName" name="fullName" tabindex="1">
+    </label>
+  </div>
+  <div class="col-2">
+    <label>
+      Organization
+      <input placeholder="Where do you currently work?" id="companyName" name="companyName" tabindex="2">
+    </label>
+  </div>
+  
+  <div class="col-3">
+    <label>
+      Phone Number
+      <input placeholder="What is the best # to reach you?" id="phoneNo" name="phoneNo" tabindex="3">
+    </label>
+  </div>
+  <div class="col-3">
+    <label>
+      Email
+      <input placeholder="What is your e-mail address?" id="email" name="email" tabindex="4">
+    </label>
+  </div>
+  <div class="col-3">
+    <label>
+      Availability
+      <input placeholder="Availability" id="noticePeriod" name="noticePeriod" tabindex="4">
+<!--       <select tabindex="5" id="noticePeriod" name="noticePeriod"> -->
+<!--         <option> Less than a week </option> -->
+<!--         <option> Less than a month </option> -->
+<!--         <option> More than a month </option> -->
+<!--       </select> -->
+    </label>
+  </div>
+  <div class="col-4">
+    <label>
+      Title
+	   <input placeholder="Current Designation" id="designation" name="designation" tabindex="4">
+    </label>
+  </div>
+  <div class="col-4">
+    <label>
+      Primary Skills
+        <select tabindex="5" id="skills" name="skills">
+        <option> Java/JEE </option>
+        <option> Dot Net </option>
+        <option> Mainframe </option>
+        <option> DWBI </option>
+        <option> Testing </option>
+        <option> Others </option>
+      </select>
+    </label>
+  </div>
+  <div class="col-4">
+    <label>
+      Secondary Skills
+	   <input placeholder="Specializations if any" id="email" name="email" tabindex="4">
+    </label>
+  </div>
+  <div class="col-4">
+    <label>
+      Yrs Experience
+      <input placeholder="How many years of experience?" id="experience" name="experience" tabindex="7">
+    </label>
+  </div>
+  <div class="col-3">
+    <label>
+      Current Salary
+      <input placeholder="Monthly in RM" id="currentSalary" name="currentSalary" tabindex="3">
+    </label>
+  </div>
+  <div class="col-3">
+    <label>
+      Expected Salary
+      <input placeholder="Monthly in RM" id="expSalary" name="expSalary" tabindex="4">
+    </label>
+  </div>
+  <div class="col-3 switch">
+    <label>Visibility</label>
+    <center style="position:relative;margin-bottom:8px;"><input type="checkbox" class="js-switch"></center>
+  </div>
+  
+  <div class="col-submit">
+    <button class="submitbtn">Submit Form</button>
+  </div>
+  <input type="hidden" id="type" name="type" class="noEnterSubmit" value="recruiter"/>
+  </form>
+  </div>
+<script type="text/javascript">
+var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+
+elems.forEach(function(html) {
+  var switchery = new Switchery(html);
+});
+
+$(function(){
+	 var usernamefrommenu = window.parent.document.getElementById('menuusername').value;
+	 $("#userName").val(usernamefrommenu);
+});
+</script>
 </body>
 </html>

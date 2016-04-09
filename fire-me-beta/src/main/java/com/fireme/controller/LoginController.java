@@ -52,7 +52,8 @@ public class LoginController {
 //			model.setViewName("invalidSession");
 //		}else{
 		
-			model.addObject("username", user.getFirstName()+" "+ user.getLastName());
+			model.addObject("fullname", user.getFirstName()+" "+ user.getLastName());
+			model.addObject("username", user.getUserName());
 			model.addObject("type", user.getType());
 			model.setViewName("menu");
 //		}

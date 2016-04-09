@@ -42,13 +42,12 @@ public class JobSeekerDaoImpl implements JobSeekerDao {
 
 	@Override
 	public String updateJobseeker(JobSeeker jobseeker) {
-		String sqlQuery = "UPDATE JOBSEEKER SET userId =?,currentSalary =?,expSalary =?,companyName =?,designation =?,hasNoc =?,noticePeriod=? WHERE jobseekerId =?";
+		String sqlQuery = "UPDATE JOB_SEEKER SET CUR_SALARY =?,EXP_SALARY =?,COMPANY =?,DESIGNATION =?,NOTICE_PERIOD=?, SKILLS=?, EXP=? WHERE USER_NAME =?";
 
 		System.out.println("Update sql statement === " + sqlQuery);
 		jdbcTemplate = new JdbcTemplate(getDataSource());
-		jdbcTemplate.update(sqlQuery, jobseeker.getUserId(), jobseeker.getCurrentSalary(), jobseeker.getExpSalary(),
-				jobseeker.getCompanyName(), jobseeker.getDesignation(), jobseeker.isHasNoc(),
-				jobseeker.getNoticePeriod(), jobseeker.getJobseekerId());
+		jdbcTemplate.update(sqlQuery, jobseeker.getCurrentSalary(), jobseeker.getExpSalary(),
+				jobseeker.getCompanyName(), jobseeker.getDesignation(),jobseeker.getNoticePeriod(),jobseeker.getSkills(),jobseeker.getExperience(),jobseeker.getUserName());
 		try {
 			dataSource.getConnection().setAutoCommit(true);
 		} catch (SQLException e) {

@@ -54,7 +54,8 @@ public class RecruiterController {
 			e.printStackTrace();
 		}
 
-		model.addObject("username", user.getFirstName()+" "+ user.getLastName());
+		model.addObject("fullname", user.getFirstName()+" "+ user.getLastName());
+		model.addObject("username", user.getUserName());
 		model.setViewName("menu");
 		model.addObject("type", "R");
 		return model;

@@ -7,6 +7,7 @@ public class User {
 	String password;
 	String firstName;
 	String lastName;
+	String fullName;
 	String type;
 	String email;
 	String phoneNo;
@@ -115,10 +116,12 @@ public class User {
 		this.role = role;
 	}
 
-	
+	public String getFullName() {
+		return fullName;
+	}
 
-	
-
-	
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
+	}
 	
 }
