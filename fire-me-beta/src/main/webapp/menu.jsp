@@ -30,6 +30,8 @@
 			<ul>
 				<li tabindex="0" class="icon-dashboard"><span id="recruiterDashboard">Dashboard</span></li>
 				<li tabindex="0" class="icon-customers"><span id="jobSeekerListings">Job Seeker Listings</span></li>
+				<li tabindex="0" class="icon-customers"><span id="postJob">Post A Job</span></li>
+				<li tabindex="0" class="icon-customers"><span id="jobPostedList">Job Postings already offered</span></li>
 				<li tabindex="0" class="icon-man"><span id="recruiterProfile">Profile</span></li>
 				<li tabindex="0" class="icon-settings"><span id="settings">Settings</span></li>
 				<li tabindex="0" class="icon-block"><span id="signout">Sign Out</span></li>

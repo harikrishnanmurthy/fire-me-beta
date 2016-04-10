@@ -28,5 +28,13 @@ $(function(){
 		console.log("profile");
 		$("#dframe").attr("src","jobSeekerListings.jsp")
 	});
+	$("#postJob").click(function(){
+		console.log("postJob");
+		$("#dframe").attr("src","postJob.jsp")
+	});
+	$("#jobPostedList").click(function(){
+		console.log("jobPostedList");
+		$("#dframe").attr("src","jobPostedList.jsp")
+	});
 
 });
