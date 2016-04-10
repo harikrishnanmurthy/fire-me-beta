@@ -1,5 +1,7 @@
 package com.fireme.service.impl;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Component;
@@ -17,6 +19,11 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 	@Override
 	public void updateJobSeeker(JobSeeker jobseeker) {
 		jobSeekerDao.updateJobseeker(jobseeker);
+	}
+
+	@Override
+	public List<JobSeeker> listJobSeekers() {
+		return jobSeekerDao.listJobSeekers();
 	}
 
 }

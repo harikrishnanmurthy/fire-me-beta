@@ -1,6 +1,6 @@
 $("document").ready(function(){
 	
-    $('#jobListings').dataTable( {
+    $('#jobSeekerListings').dataTable( {
 //		 "bLengthChange": false,
 	     "bInfo": false,
     	 "oLanguage": {
@@ -10,43 +10,51 @@ $("document").ready(function(){
         "aoColumns": [
                     { "sType": "string" },
                     { "sType": "string" },
+                    { "sType": "string" },
+                    { "sType": "string" },
+                    { "sType": "string" },
+                    { "sType": "string" },
                     { "sType": "string" }
         ],
         "aaSorting": [[ 0, "desc" ]]
     } );
-    // Initialize Job Listings table
-    initJobListings();
+    // Initialize Job Seeker Listings table
+    initJobSeekerListings();
 });
 
-function initJobListings() {
+function initJobSeekerListings() {
 	// call service to get list of jobs and populate table
 	
-	$("#jobListings").dataTable().fnClearTable();
+	$("#jobSeekerListings").dataTable().fnClearTable();
 	var dtArray = new Array();
 	
 	$.ajax({
     	type: 'GET',
-    	url: '/fire-me-beta/listJobs',
+    	url: '/fire-me-beta/listjobseekers',
         dataType: 'json',
         success: function (data) { 
         	for (var i = 0; i < data.length; i++) {
         		var obj = data[i];
-        		dtArray.push([ obj.company, obj.jobDescription, rejectTaskWorkflow() ]);
+        		dtArray.push([ obj.userName,obj.noticePeriod,obj.designation,obj.experience,obj.currentSalary,obj.expSalary,moreInfo(obj)]);
         	}
         	
-        	$("#jobListings").dataTable().fnAddData(dtArray);
+        	$("#jobSeekerListings").dataTable().fnAddData(dtArray);
         },
         cache: false,
         error: function( xhr, err) { 
             if (error) {
                 error( xhr, err );
             } else {
-                return xhrErr( statusId, xhr, err, "There was a problem while trying to get list of approved Tasks." ); 
+                return xhrErr( statusId, xhr, err, "There was a problem while trying to get list of job seekers" ); 
             }
         }
     });
 }
 
-function rejectTaskWorkflow() {
-    return '<button class="btn btn-mini btn-danger"><i class="icon-remove-sign icon-white"></i>Reject</button>';
+function displayMore(obj){
+	$('#moreInfo').modal('show');
+}
+
+function moreInfo(obj) {
+    return '<button class="btn btn-success btn-xs" onclick="displayMore(\'' + obj + '\');"><i class="icon-remove-sign icon-white"></i>More Info</button>';
 }

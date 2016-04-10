@@ -73,8 +73,8 @@ public class JobSeekerDaoImpl implements JobSeekerDao {
 	}
 
 	@Override
-	public List<JobSeeker> listJobSeekers(String jobId) {
-		String sql = "Select * from JobSeeker where jobId=?";
+	public List<JobSeeker> listJobSeekers() {
+		String sql = "Select * from JOB_SEEKER";
 		jdbcTemplate = new JdbcTemplate(getDataSource());
 		List<JobSeeker> jobSeekerList = jdbcTemplate.query(sql, new JobSeekerMapper());
 		return jobSeekerList;

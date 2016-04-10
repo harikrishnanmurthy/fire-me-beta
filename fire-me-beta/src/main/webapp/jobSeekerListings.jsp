@@ -14,85 +14,50 @@
 <body>
 	<div class="container-fluid">
 		<div class="row-fluid">
-			<div id="content" class="span9" style="width:100%;">
+			<div id="content" class="span9" style="width:80%;">
 				<div class="row"
 					style="margin-left: 0px !important; margin-top: 20px;">
 					<div>
 						<div class="datatableFix datatableFixPadding">
 							<div id="status" style="word-wrap: break-word;"></div>
-							<table id="jobListings" class="table table-striped table-bordered" cellspacing="0" width="100%">
+							<table id="jobSeekerListings" class="table table-striped table-bordered" cellspacing="0" width="100%">
 		        <thead>
 		            <tr>
-		                <th>Company</th>
-		                <th>Job Summary</th>
+		                <th>User</th>
+		                <th>Notice Period</th>
+		                <th>Designation</th>
+		                <th>Experience</th>
+		                <th>Current Salary</th>
+		                <th>Expected Salary</th>
 		                <th>Action</th>
 		            </tr>
 		        </thead>
-		        <tfoot>
-		            <tr>
-		                <th>Company</th>
-		                <th>Job Summary</th>
-		                <th>Action</th>
-		            </tr>
-		        </tfoot>
     		</table>
 					</div>
 				</div>
 			</div>
 
-				<div class="modal hide" id="changePassword" tabindex="-1">
-					<div class="modal-header">
-						<h3>Edit FITR</h3>
+			<div class="modal fade" id="moreInfo" tabindex="-1" role="dialog" aria-labelledby="moreInfoLabel">
+			  <div class="modal-dialog" role="document">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			        <h4 class="modal-title" id="moreInfoLabel">More Information</h4>
+			      </div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="comment">Enter message to be sent to this job seeker:</label>
+							<textarea class="form-control" rows="4" id="comment"></textarea>
+						</div>
 					</div>
-					<div class="modal-body" style="height: 220px;">
-						<div id="changePasswordStatus"></div>
-						<form id="changePasswordForm" name="changePasswordForm"
-							method="get" class="well form-horizontal" action="http://10.3.9.245:9996/fitr/create/49">
-							<div class="control-group">
-								<label class="control-label" for="inputPassword">Tax Code</label>
-								<div class="controls">
-									<input type="text" id="changetaxcode" name="tax_cd"
-										class="noEnterSubmit" />
-								</div>
-							</div>
-							<div class="control-group" id="changePasswordFormPasswordGroup">
-								<label class="control-label" for="inputPassword">FITR</label>
-								<div class="controls">
-									<input type="text" id="changefitr" name="fitr"
-										class="noEnterSubmit" />
-								</div>
-							</div>
-							<div class="control-group"
-								id="changePasswordFormonfirmPasswordGroup">
-								<label class="control-label" for="inputonfirmPassword">User Id</label>
-								<div class="controls">
-									<input type="text" id="changeuserid" name="user_id"
-										class="noEnterSubmit" />
-								</div>
-							</div>
-							<div class="control-group"
-								id="changePasswordFormonfirmPasswordGroup">
-								<label class="control-label" for="inputonfirmPassword">Effective Date</label>
-								<div class="controls">
-									<input type="text" id="changeeffectivedate" name="effective_date"
-										class="noEnterSubmit" />
-								</div>
-							</div>
-							<div class="control-group"
-								id="changePasswordFormonfirmPasswordGroup">
-								<label class="control-label" for="inputonfirmPassword">End Date</label>
-								<div class="controls">
-									<input type="text" id="changeenddate" name="end_date"
-										class="noEnterSubmit" />
-								</div>
-							</div>
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button id="changePasswordAction" class="btn btn-primary">Submit</button>
-						<button id="changePasswordCancel" class="btn" data-dismiss="modal">Cancel</button>
-					</div>
-				</div>
+				  <div class="modal-footer">
+				 	<button type="button" class="btn btn-info" id="profileDownload"><span class="glyphicon glyphicon-download-alt"></span>&nbsp Profile Download</button>
+			        <button type="button" class="btn btn-primary" id="sendEmail"><span class="glyphicon glyphicon-envelope"></span>&nbsp Email</button>
+			        <button type="button" class="btn btn-warning" id="sendSMS"><span class="glyphicon glyphicon-phone"></span>&nbsp SMS</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 
 			</div>
 			<!--/span-->
@@ -101,6 +66,6 @@
 	</div>
 		<script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
-		<script type="text/javascript" src="js/joblistings.js"></script>
+		<script type="text/javascript" src="js/jobseekerlistings.js"></script>
 </body>
 </html>

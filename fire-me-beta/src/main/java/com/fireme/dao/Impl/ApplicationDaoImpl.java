@@ -64,7 +64,7 @@ private JdbcTemplate jdbcTemplate;
 	}
 
 	@Override
-	public List<JobSeeker> listJobSeekers(String jobId) {
+	public List<JobSeeker> listJobSeekers() {
 		// TODO Auto-generated method stub
 		return null;
 	}
