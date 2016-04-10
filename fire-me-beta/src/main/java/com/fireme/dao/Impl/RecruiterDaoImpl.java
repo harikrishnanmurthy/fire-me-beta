@@ -40,7 +40,7 @@ private JdbcTemplate jdbcTemplate;
 
 	@Override
 	public String createRecruiter(Recruiter recruiter) {
-		String sql = "INSERT INTO RECRUITER(USER_NAME,ORG_NAME)VALUES(?,?)";
+		String sql = "INSERT INTO RECRUITER(USERNAME,ORG_NAME)VALUES(?,?)";
 		jdbcTemplate = new JdbcTemplate(getDataSource());
 		jdbcTemplate.update(sql, new Object[] {recruiter.getUserName(),recruiter.getOrgName()});
 	 	try {

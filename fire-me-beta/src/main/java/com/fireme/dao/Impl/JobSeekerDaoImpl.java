@@ -42,7 +42,7 @@ public class JobSeekerDaoImpl implements JobSeekerDao {
 
 	@Override
 	public String updateJobseeker(JobSeeker jobseeker) {
-		String sqlQuery = "UPDATE JOB_SEEKER SET CUR_SALARY =?,EXP_SALARY =?,COMPANY =?,DESIGNATION =?,NOTICE_PERIOD=?, SKILLS=?, EXP=? WHERE USER_NAME =?";
+		String sqlQuery = "UPDATE JOB_SEEKER SET CUR_SALARY =?,EXP_SALARY =?,COMPANY =?,DESIGNATION =?,NOTICE_PERIOD=?, SKILLS=?, EXP=? WHERE USERNAME =?";
 
 		System.out.println("Update sql statement === " + sqlQuery);
 		jdbcTemplate = new JdbcTemplate(getDataSource());
@@ -58,7 +58,7 @@ public class JobSeekerDaoImpl implements JobSeekerDao {
 
 	@Override
 	public String createJobSeeker(JobSeeker jobSeeker) {
-		String sql = "INSERT INTO JOB_SEEKER(USER_NAME,CUR_SALARY,EXP_SALARY,DESIGNATION,NOTICE_PERIOD,HAVE_NOC,COMPANY)VALUES(?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO JOB_SEEKER(USERNAME,CUR_SALARY,EXP_SALARY,DESIGNATION,NOTICE_PERIOD,HAVE_NOC,COMPANY)VALUES(?,?,?,?,?,?,?)";
 		jdbcTemplate = new JdbcTemplate(getDataSource());
 		jdbcTemplate.update(sql,
 				new Object[] {jobSeeker.getUserName(), jobSeeker.getCurrentSalary(),
