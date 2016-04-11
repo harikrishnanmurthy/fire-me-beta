@@ -26,4 +26,10 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 		return jobSeekerDao.listJobSeekers();
 	}
 
+	@Override
+	public JobSeeker findJobSeeker(String userName) {
+		// TODO Auto-generated method stub
+		return jobSeekerDao.findJobSeeker(userName);
+	}
+
 }

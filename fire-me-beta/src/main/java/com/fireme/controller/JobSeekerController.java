@@ -1,5 +1,6 @@
 package com.fireme.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
@@ -104,8 +107,17 @@ public class JobSeekerController {
 	}
 	
 	@RequestMapping(value = "/jobSeekerprofile", method = RequestMethod.POST)
-	public String updateRecruiterProfile(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("jobSeeker") JobSeeker jobSeeker) {
+	public String updateRecruiterProfile(HttpServletRequest request, HttpServletResponse response,@RequestParam("resumename") String name,
+			@ModelAttribute("jobSeeker") JobSeeker jobSeeker, @RequestParam("resume") MultipartFile file) {
 		System.out.println("Inside update profile job seeker");
+		try {
+			String modifiedName = name.substring(name.lastIndexOf("\\")+1);
+			jobSeeker.setProfileName(modifiedName);
+			jobSeeker.setProfile(file.getBytes());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		jobSeekerService.updateJobSeeker(jobSeeker);
 		return "updateRecruiterProfile";
 	}

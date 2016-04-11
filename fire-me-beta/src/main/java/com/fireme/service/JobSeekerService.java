@@ -7,5 +7,6 @@ import com.fireme.model.JobSeeker;
 public interface JobSeekerService {
 	public void updateJobSeeker(JobSeeker jobseeker);
 	public List<JobSeeker> listJobSeekers();
+	public JobSeeker findJobSeeker(String userName);
 }
 

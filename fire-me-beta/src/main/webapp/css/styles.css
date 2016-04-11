@@ -82,7 +82,7 @@ label > input {
   position: relative;
   width: 100%;
   height: 27px;
-  line-height: 27px;
+  line-height: 20px;
   margin: 5px -5px 0;
   padding: 7px 5px 3px;
   border: none;

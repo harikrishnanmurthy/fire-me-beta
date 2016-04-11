@@ -13,7 +13,7 @@
 
 <body>
   <div id="wrapper">
-  <form action="jobSeekerprofile" name="registerJobSeekerForm" class="jobSeekerForm" id="registerJobSeekerForm" method="POST">
+  <form action="jobSeekerprofile" enctype="multipart/form-data" name="registerJobSeekerForm" class="jobSeekerForm" onsubmit="return validateForm()" id="registerJobSeekerForm" method="POST">
   <input type="hidden" id="userName" name="userName"/>
   <div class="col-2">
     <label>
@@ -95,7 +95,24 @@
     </label>
   </div>
   <div class="col-3 switch">
-    <label>Visibility</label>
+     <label>
+      NOC
+      <select tabindex="5" id="hasNoc" name="hasNoc">
+        <option> True </option>
+        <option> False </option>
+      </select>
+    </label>
+  </div>
+  
+  <div class="col-2">
+    <label>
+      Upload Resume
+      <input type="file" name="resume">
+      <input type="hidden" name="resumename">
+    </label>
+  </div>
+  <div class="col-2">
+  	<label>Visibility</label>
     <center style="position:relative;margin-bottom:8px;"><input type="checkbox" class="js-switch"></center>
   </div>
   
@@ -116,6 +133,10 @@ $(function(){
 	 var usernamefrommenu = window.parent.document.getElementById('menuusername').value;
 	 $("#userName").val(usernamefrommenu);
 });
+
+function validateForm() {
+    document.forms["registerJobSeekerForm"]["resumename"].value = document.forms["registerJobSeekerForm"]["resume"].value;
+}
 </script>
 </body>
 </html>

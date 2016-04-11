@@ -42,12 +42,13 @@ public class JobSeekerDaoImpl implements JobSeekerDao {
 
 	@Override
 	public String updateJobseeker(JobSeeker jobseeker) {
-		String sqlQuery = "UPDATE JOB_SEEKER SET CUR_SALARY =?,EXP_SALARY =?,COMPANY =?,DESIGNATION =?,NOTICE_PERIOD=?, SKILLS=?, EXP=? WHERE USERNAME =?";
+		String sqlQuery = "UPDATE JOB_SEEKER SET CUR_SALARY =?,EXP_SALARY =?,COMPANY =?,DESIGNATION =?,NOTICE_PERIOD=?, SKILLS=?, EXP=? , PROFILE=?, PROFILE_NAME=? WHERE USERNAME =?";
 
 		System.out.println("Update sql statement === " + sqlQuery);
 		jdbcTemplate = new JdbcTemplate(getDataSource());
 		jdbcTemplate.update(sqlQuery, jobseeker.getCurrentSalary(), jobseeker.getExpSalary(),
-				jobseeker.getCompanyName(), jobseeker.getDesignation(),jobseeker.getNoticePeriod(),jobseeker.getSkills(),jobseeker.getExperience(),jobseeker.getUserName());
+				jobseeker.getCompanyName(), jobseeker.getDesignation(),jobseeker.getNoticePeriod(),
+				jobseeker.getSkills(),jobseeker.getExperience(),jobseeker.getProfile(),jobseeker.getProfileName(),jobseeker.getUserName());
 		try {
 			dataSource.getConnection().setAutoCommit(true);
 		} catch (SQLException e) {
@@ -96,10 +97,10 @@ public class JobSeekerDaoImpl implements JobSeekerDao {
 	}
 
 	@Override
-	public JobSeeker findJobSeeker(String userId) {
-		String sql = "SELECT * FROM JOBSEEKER WHERE userId = ?";
+	public JobSeeker findJobSeeker(String userName) {
+		String sql = "SELECT * FROM JOB_SEEKER WHERE USERNAME = ?";
 
-		JobSeeker jobSeeker = (JobSeeker) getJdbcTemplate().queryForObject(sql, new Object[] { userId },
+		JobSeeker jobSeeker = (JobSeeker) getJdbcTemplate().queryForObject(sql, new Object[] { userName },
 				new JobSeekerMapper());
 
 		return jobSeeker;

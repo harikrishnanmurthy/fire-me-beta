@@ -1,5 +1,7 @@
 package com.fireme.model;
 
+import java.io.File;
+
 public class JobSeeker extends User {
 
 	String jobseekerId;
@@ -11,6 +13,8 @@ public class JobSeeker extends User {
 	int noticePeriod;
 	Double experience;
 	String skills;
+	byte[] profile;
+	String profileName;
 
 	public Double getCurrentSalary() {
 		return currentSalary;
@@ -106,6 +110,22 @@ public class JobSeeker extends User {
 
 	public void setSkills(String skills) {
 		this.skills = skills;
+	}
+
+	public byte[] getProfile() {
+		return profile;
+	}
+
+	public void setProfile(byte[] profile) {
+		this.profile = profile;
+	}
+
+	public String getProfileName() {
+		return profileName;
+	}
+
+	public void setProfileName(String profileName) {
+		this.profileName = profileName;
 	}
 
 }

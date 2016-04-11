@@ -1,5 +1,6 @@
 package com.fireme.mapper;
 
+import java.sql.Blob;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -19,6 +20,15 @@ public class JobSeekerMapper implements RowMapper<JobSeeker> {
 		jobSeeker.setExperience(rs.getDouble("EXP"));
 		jobSeeker.setCurrentSalary(rs.getDouble("CUR_SALARY"));
 		jobSeeker.setExpSalary(rs.getDouble("EXP_SALARY"));
+		jobSeeker.setProfileName(rs.getString("PROFILE_NAME"));
+		if(null!=rs.getBlob("PROFILE")){
+			Blob blob = rs.getBlob("PROFILE");
+			int blobLength = (int) blob.length();  
+			byte[] blobAsBytes = blob.getBytes(1, blobLength);
+			jobSeeker.setProfile(blobAsBytes);
+			blob.free();
+		}
+		
 		
 	    return jobSeeker;
 	}

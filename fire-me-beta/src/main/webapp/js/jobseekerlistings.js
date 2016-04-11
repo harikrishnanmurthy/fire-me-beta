@@ -35,7 +35,7 @@ function initJobSeekerListings() {
         success: function (data) { 
         	for (var i = 0; i < data.length; i++) {
         		var obj = data[i];
-        		dtArray.push([ obj.userName,obj.noticePeriod,obj.designation,obj.experience,obj.currentSalary,obj.expSalary,moreInfo(obj)]);
+        		dtArray.push([ obj.userName,obj.noticePeriod,obj.designation,obj.experience,obj.currentSalary,obj.expSalary,moreInfo(obj.userName)]);
         	}
         	
         	$("#jobSeekerListings").dataTable().fnAddData(dtArray);
@@ -51,10 +51,19 @@ function initJobSeekerListings() {
     });
 }
 
-function displayMore(obj){
+function displayMore(username){
+	$("#jobseekerusername").val(username);
 	$('#moreInfo').modal('show');
 }
 
-function moreInfo(obj) {
-    return '<button class="btn btn-success btn-xs" onclick="displayMore(\'' + obj + '\');"><i class="icon-remove-sign icon-white"></i>More Info</button>';
+function moreInfo(username) {
+    return '<button class="btn btn-success btn-xs" onclick="displayMore(\'' + username + '\');"><i class="icon-remove-sign icon-white"></i>More Info</button>';
 }
+
+$("#profileDownload").click(function(){
+	window.open("/fire-me-beta/profiledownload?username="+$("#jobseekerusername").val());
+})
+
+$("#jobseekeremail").click(function(){
+	$("#jobseekerusername").val(username);
+});
