@@ -99,9 +99,14 @@ public class JobSeekerDaoImpl implements JobSeekerDao {
 	@Override
 	public JobSeeker findJobSeeker(String userName) {
 		String sql = "SELECT * FROM JOB_SEEKER WHERE USERNAME = ?";
+		
+		String sql2 = "SELECT * FROM USER WHERE USERNAME = ?";
 
 		JobSeeker jobSeeker = (JobSeeker) getJdbcTemplate().queryForObject(sql, new Object[] { userName },
 				new JobSeekerMapper());
+		
+		User user = (User)getJdbcTemplate().queryForObject(sql2, new Object[]{userName},new UserMapper());
+		jobSeeker.setEmail(user.getEmail());
 
 		return jobSeeker;
 	}

@@ -64,6 +64,30 @@ $("#profileDownload").click(function(){
 	window.open("/fire-me-beta/profiledownload?username="+$("#jobseekerusername").val());
 })
 
-$("#jobseekeremail").click(function(){
-	$("#jobseekerusername").val(username);
+
+$("#sendEmail").click(function(){
+	var username = $("#jobseekerusername").val();
+	console.log("UserName == " + username);
+	var emailBody = $("#comment").val()
+	console.log("emailBody == " + emailBody);
+	
+	var myKeyVals = { "userName" : username, "message" : emailBody }
+	
+	$.ajax({
+		type : "POST",
+		async : false,
+		url : "/fire-me-beta/sendemail",
+		data : JSON.stringify(myKeyVals),
+		dataType : 'json',
+		contentType : "application/json",
+		success : function(data) {
+			console.log("SUCCESS: ", data);
+		},
+		error : function(e) {
+			console.log("ERROR: ", e);
+		},
+		done : function(e) {
+			console.log("DONE");
+		}
+	});
 });

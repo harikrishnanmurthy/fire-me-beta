@@ -19,17 +19,20 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fireme.model.EmailCriteria;
 import com.fireme.model.JobSeeker;
 import com.fireme.model.Recruiter;
 import com.fireme.model.User;
 import com.fireme.service.JobSeekerService;
 import com.fireme.service.UserService;
+import com.fireme.utilities.SendMailSSL;
 
 @Controller
 public class RecruiterController {
@@ -101,6 +104,14 @@ public class RecruiterController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	@RequestMapping(value="/sendemail",method=RequestMethod.POST)
+	@ResponseBody
+	public void sendEmail(@RequestBody EmailCriteria criteria){
+		JobSeeker jobSeeker = jobSeekerService.findJobSeeker(criteria.getUserName());
+		String recipientEmail = jobSeeker.getEmail();
+		SendMailSSL.sendEmail(recipientEmail, criteria.getMessage());
 	}
 	
     private void authenticateUserAndSetSession(User user, HttpServletRequest request) {

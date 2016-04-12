@@ -49,7 +49,6 @@
 							<label for="comment">Enter message to be sent to this job seeker:</label>
 							<textarea class="form-control" rows="4" id="comment"></textarea>
 							<input type="hidden" id="jobseekerusername" />
-							<input type="hidden" id="jobseekeremail" />
 						</div>
 					</div>
 				  <div class="modal-footer">
