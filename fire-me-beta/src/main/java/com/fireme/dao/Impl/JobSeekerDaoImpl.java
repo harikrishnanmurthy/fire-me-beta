@@ -43,12 +43,16 @@ public class JobSeekerDaoImpl implements JobSeekerDao {
 	@Override
 	public String updateJobseeker(JobSeeker jobseeker) {
 		String sqlQuery = "UPDATE JOB_SEEKER SET CUR_SALARY =?,EXP_SALARY =?,COMPANY =?,DESIGNATION =?,NOTICE_PERIOD=?, SKILLS=?, EXP=? , PROFILE=?, PROFILE_NAME=? WHERE USERNAME =?";
+		
+		String sqlQuery2 = "UPDATE USER SET FIRST_NAME =?,LAST_NAME =?,EMAIL_ID =?,PHONE =? WHERE USERNAME =?";
 
 		System.out.println("Update sql statement === " + sqlQuery);
 		jdbcTemplate = new JdbcTemplate(getDataSource());
 		jdbcTemplate.update(sqlQuery, jobseeker.getCurrentSalary(), jobseeker.getExpSalary(),
 				jobseeker.getCompanyName(), jobseeker.getDesignation(),jobseeker.getNoticePeriod(),
 				jobseeker.getSkills(),jobseeker.getExperience(),jobseeker.getProfile(),jobseeker.getProfileName(),jobseeker.getUserName());
+		jdbcTemplate.update(sqlQuery2, jobseeker.getFirstName(), jobseeker.getLastName(),
+				jobseeker.getEmail(), jobseeker.getPhoneNo(),jobseeker.getUserName());
 		try {
 			dataSource.getConnection().setAutoCommit(true);
 		} catch (SQLException e) {
@@ -107,6 +111,7 @@ public class JobSeekerDaoImpl implements JobSeekerDao {
 		
 		User user = (User)getJdbcTemplate().queryForObject(sql2, new Object[]{userName},new UserMapper());
 		jobSeeker.setEmail(user.getEmail());
+		jobSeeker.setPhoneNo(user.getPhoneNo());
 
 		return jobSeeker;
 	}

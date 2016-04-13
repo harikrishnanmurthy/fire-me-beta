@@ -118,6 +118,9 @@ public class JobSeekerController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		String fullName = jobSeeker.getFullName();
+		jobSeeker.setFirstName(fullName.substring(0, fullName.lastIndexOf(" ")-1));
+		jobSeeker.setLastName(fullName.substring(fullName.lastIndexOf(" ")+1));
 		jobSeekerService.updateJobSeeker(jobSeeker);
 		return "updateRecruiterProfile";
 	}

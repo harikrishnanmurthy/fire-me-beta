@@ -33,6 +33,7 @@ import com.fireme.model.User;
 import com.fireme.service.JobSeekerService;
 import com.fireme.service.UserService;
 import com.fireme.utilities.SendMailSSL;
+import com.fireme.utilities.SendSMS;
 
 @Controller
 public class RecruiterController {
@@ -112,6 +113,14 @@ public class RecruiterController {
 		JobSeeker jobSeeker = jobSeekerService.findJobSeeker(criteria.getUserName());
 		String recipientEmail = jobSeeker.getEmail();
 		SendMailSSL.sendEmail(recipientEmail, criteria.getMessage());
+	}
+	
+	@RequestMapping(value="/sendsms",method=RequestMethod.POST)
+	@ResponseBody
+	public void sendSMS(@RequestBody EmailCriteria criteria){
+		JobSeeker jobSeeker = jobSeekerService.findJobSeeker(criteria.getUserName());
+		String phoneNumber = jobSeeker.getPhoneNo();
+		SendSMS.sendSMS(phoneNumber,criteria.getMessage());
 	}
 	
     private void authenticateUserAndSetSession(User user, HttpServletRequest request) {
