@@ -20,11 +20,12 @@ public class SendMailSSL {
 				"javax.net.ssl.SSLSocketFactory");
 		props.put("mail.smtp.auth", "true");
 		props.put("mail.smtp.port", "465");
+		props.put("mail.smtp.ssl.trust", "*");
 
 		Session session = Session.getDefaultInstance(props,
 			new javax.mail.Authenticator() {
 				protected PasswordAuthentication getPasswordAuthentication() {
-					return new PasswordAuthentication("noreplyfireme2016","fireme1234");
+					return new PasswordAuthentication("noreplyfireme2016","fireme5678");
 				}
 			});
 

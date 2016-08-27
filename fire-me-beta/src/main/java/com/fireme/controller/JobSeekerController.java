@@ -103,6 +103,8 @@ public class JobSeekerController {
 		jobList.add(new Job("Xchanging", "Java Developer", "XJ001"));
 		jobList.add(new Job("BT", "Java Developer", "BJ001"));
 		jobList.add(new Job("Randstad", "Java Developer", "RJ001"));
+		
+		System.out.println("Job List === "+ jobList);
 		return jobList;
 	}
 	

@@ -75,19 +75,22 @@ $("#sendEmail").click(function(){
 	
 	$.ajax({
 		type : "POST",
-		async : false,
+		async : true,
 		url : "/fire-me-beta/sendemail",
 		data : JSON.stringify(myKeyVals),
 		dataType : 'json',
 		contentType : "application/json",
 		success : function(data) {
 			console.log("SUCCESS: ", data);
+			$('#moreInfo').modal('hide');
 		},
 		error : function(e) {
 			console.log("ERROR: ", e);
+			$('#moreInfo').modal('hide');
 		},
 		done : function(e) {
 			console.log("DONE");
+			$('#moreInfo').modal('hide');
 		}
 	});
 });
@@ -102,19 +105,22 @@ $("#sendSMS").click(function(){
 	
 	$.ajax({
 		type : "POST",
-		async : false,
+		async : true,
 		url : "/fire-me-beta/sendsms",
 		data : JSON.stringify(myKeyVals),
 		dataType : 'json',
 		contentType : "application/json",
 		success : function(data) {
 			console.log("SUCCESS: ", data);
+			$('#moreInfo').modal('hide');
 		},
 		error : function(e) {
 			console.log("ERROR: ", e);
+			$('#moreInfo').modal('hide');
 		},
 		done : function(e) {
 			console.log("DONE");
+			$('#moreInfo').modal('hide');
 		}
 	});
 });

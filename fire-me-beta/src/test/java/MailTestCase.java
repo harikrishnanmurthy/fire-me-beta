@@ -23,7 +23,7 @@ public class MailTestCase {
 		Session session = Session.getDefaultInstance(props,
 			new javax.mail.Authenticator() {
 				protected PasswordAuthentication getPasswordAuthentication() {
-					return new PasswordAuthentication("noreplyfireme2016","fireme1234");
+					return new PasswordAuthentication("noreplyfireme2016","fireme5678");
 				}
 			});
 
