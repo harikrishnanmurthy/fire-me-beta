@@ -29,7 +29,6 @@ function initJobListings() {
     	url: '/fire-me-beta/listJobs',
         dataType: 'json',
         success: function (data) { 
-        	alert("data");
         	for (var i = 0; i < data.length; i++) {
         		var obj = data[i];
         		dtArray.push([ obj.orgName, obj.title, rejectTaskWorkflow() ]);
