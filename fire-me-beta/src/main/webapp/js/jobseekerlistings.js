@@ -123,4 +123,10 @@ $("#sendSMS").click(function(){
 			$('#moreInfo').modal('hide');
 		}
 	});
+	
 });
+
+$("#jobseekeremail").click(function(){
+	$("#jobseekerusername").val(username);
+});
+	
