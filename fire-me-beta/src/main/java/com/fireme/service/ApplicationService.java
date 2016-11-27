@@ -1,0 +1,12 @@
+package com.fireme.service;
+
+import java.util.List;
+
+import com.fireme.model.JobSeeker;
+
+public interface ApplicationService {
+	public void updateJobSeeker(JobSeeker jobseeker);
+	public List<JobSeeker> listJobSeekers();
+	public JobSeeker findJobSeeker(String userName);
+}
+

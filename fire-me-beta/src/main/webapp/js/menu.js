@@ -30,7 +30,7 @@ $(function(){
 	});
 	$("#postJob").click(function(){
 		console.log("postJob");
-		$("#dframe").attr("src","postJob.jsp")
+		$("#dframe").attr("src","jobPost.jsp")
 	});
 	$("#jobPostedList").click(function(){
 		console.log("jobPostedList");

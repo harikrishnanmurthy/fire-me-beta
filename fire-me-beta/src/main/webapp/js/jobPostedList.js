@@ -1,6 +1,6 @@
 $("document").ready(function(){
 	
-    $('#jobSeekerListings').dataTable( {
+    $('#jobPostedListings').dataTable( {
 //		 "bLengthChange": false,
 	     "bInfo": false,
     	 "oLanguage": {
@@ -12,33 +12,32 @@ $("document").ready(function(){
                     { "sType": "string" },
                     { "sType": "string" },
                     { "sType": "string" },
-                    { "sType": "string" },
-                    { "sType": "string" },
                     { "sType": "string" }
         ],
         "aaSorting": [[ 0, "desc" ]]
     } );
     // Initialize Job Seeker Listings table
-    initJobSeekerListings();
+    initJobPostedListings();
 });
 
-function initJobSeekerListings() {
+function initJobPostedListings() {
+	console.log("1111");
 	// call service to get list of jobs and populate table
 	
-	$("#jobSeekerListings").dataTable().fnClearTable();
+	$("#jobPostedListings").dataTable().fnClearTable();
 	var dtArray = new Array();
 	
 	$.ajax({
     	type: 'GET',
-    	url: '/fire-me-beta/listjobseekers',
+    	url: '/fire-me-beta/jobsPostedByUser?username='+window.parent.document.getElementById('menuusername').value,
         dataType: 'json',
         success: function (data) { 
         	for (var i = 0; i < data.length; i++) {
         		var obj = data[i];
-        		dtArray.push([ obj.userName,obj.noticePeriod,obj.designation,obj.experience,obj.currentSalary,obj.expSalary,moreInfo(obj.userName)]);
+        		dtArray.push([ obj.title,obj.skill,obj.type,setLabel(obj.status),moreInfo(obj)]);
         	}
         	
-        	$("#jobSeekerListings").dataTable().fnAddData(dtArray);
+        	$("#jobPostedListings").dataTable().fnAddData(dtArray);
         },
         cache: false,
         error: function( xhr, err) { 
@@ -51,13 +50,25 @@ function initJobSeekerListings() {
     });
 }
 
-function displayMore(username){
-	$("#jobseekerusername").val(username);
+function displayMore(){
+	console.log("less load")
 	$('#moreInfo').modal('show');
 }
 
-function moreInfo(username) {
-    return '<button class="btn btn-info btn-xs" onclick="displayMore(\'' + username + '\');"><i class="icon-remove-sign icon-white"></i>More Info</button>';
+function moreInfo(obj) {
+	console.log(222,obj);
+	$("#statustoggle").val(obj.status);
+	$("#jobdescription").val(obj.description);
+    return '<button class="btn btn-info btn-xs" onclick="displayMore();"><i class="icon-remove-sign icon-white"></i>More Info</button>';
+}
+
+function setLabel(status) {
+	console.log(333,status);
+	if(status=='A'){
+		return '<span class="label label-success">Active</span>';
+	}else{
+		return '<span class="label label-danger">Inactive</span>';
+	}
 }
 
 $("#profileDownload").click(function(){

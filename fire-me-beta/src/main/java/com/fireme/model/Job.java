@@ -2,36 +2,36 @@ package com.fireme.model;
 
 public class Job {
 	
-String jobId;
+String userId;
 String orgName;
 String description;
 String email;
 String phoneNo;
 String type;
 String title;
-String webpage;
 String skill;
 String salary;
+String status;
 
-public Job(String jobId, String orgName, String description, String email, String phoneNo, String type, String title,
-		String webpage, String skill, String salary) {
+public Job(String userId, String orgName, String description, String email, String phoneNo, String type, String title,
+		 String skill, String salary, String status) {
 	super();
-	this.jobId = jobId;
+	this.userId = userId;
 	this.orgName = orgName;
 	this.description = description;
 	this.email = email;
 	this.phoneNo = phoneNo;
 	this.type = type;
 	this.title = title;
-	this.webpage = webpage;
 	this.skill = skill;
 	this.salary = salary;
+	this.status = status;
 }
 
-public Job( String orgName, String title, String jobId){
+public Job( String orgName, String title, String userId){
 	this.orgName = orgName;
 	this.title = title;
-	this.jobId = jobId;
+	this.userId = userId;
 }
 
 public String getDescription() {
@@ -74,14 +74,6 @@ public void setTitle(String title) {
 	this.title = title;
 }
 
-public String getWebpage() {
-	return webpage;
-}
-
-public void setWebpage(String webpage) {
-	this.webpage = webpage;
-}
-
 public String getSkill() {
 	return skill;
 }
@@ -106,16 +98,27 @@ public void setOrgName(String orgName) {
 	this.orgName = orgName;
 }
 
-public String getJobId() {
-	return jobId;
+public String getUserId() {
+	return userId;
 }
-public void setJobId(String jobId) {
-	this.jobId = jobId;
+public void setUserId(String userId) {
+	this.userId = userId;
 }
 
 @Override
 public String toString() {
-	return "Job [orgName=" + orgName + ", jobDescription=" + description + ", jobId=" + jobId + "]";
+	return "Job [orgName=" + orgName + ", jobDescription=" + description + ", userId=" + userId + "]";
 }
 
+public Job() {
+	super();
+}
+
+public String getStatus() {
+	return status;
+}
+
+public void setStatus(String status) {
+	this.status = status;
+}
 }
